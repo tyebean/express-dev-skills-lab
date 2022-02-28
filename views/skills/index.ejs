@@ -7,18 +7,19 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Developer Skills Based off of Astrology</h1>
+  <h1>Developer Skills</h1>
   <% if(error) { %>
     <h2><%= error %></h2>
   <% } %>
   <ul>
-    <% skills.forEach(function(todo) { %>
+    <% skills.forEach(function(skill) { %>
       <li>
-        <%= skills.text %>
-          - 
-        <%= skills.done ? 'done' : 'not done' %>
+        <a href="/skills/<%= skill._id %>"><%= skill.skill %></a>
+        <%= skill.skill %>
+        <%= skill.acquired ? 'ACQUIRED' : 'NOT ACQUIRED' %>
       </li>
     <% }) %>
   </ul>
+  <a href="/">Home</a>
 </body>
-</html>
+</html> 
